@@ -33,18 +33,20 @@ Please consult the documentation at https://discordpy.readthedocs.io/
 ```python
 import discord
 
-class MyClient(discord.Client):
-    async def on_ready(self):
-        print(f'Logged on as {self.user}!')
+client = discord.Client()
 
-    async def on_message(self, message):
-        said = message.content
-        if said == "Hello":
-            channel = message.channel
-            user = message.author
-            await channel.send(f'{user} said {said}')
+@client.event
+async def on_ready():
+    print('We have logged in as {0.user}'.format(client))
 
-client = MyClient()
+@client.event
+async def on_message(message):
+    if message.author == client.user:
+        return
+
+    if message.content.startswith('$hello'):
+        await message.channel.send('Hello!')
+
 token = open('token.txt', "r").read()
 client.run(token)
 ```
