@@ -1,8 +1,8 @@
 # Discord Bot Workshop
 <p style="text-align:center;">
-<a href = "https://discordpy.readthedocs.io/en/latest/index.html#" >
-    <img src="Extra Files/snake.svg" width="300"/>
-</a>
+    <a href = "https://discordpy.readthedocs.io/en/latest/index.html#" >
+        <img src="Extra Files/snake.svg" width="300"/>
+    </a>
 </p>
 
 - This is a three day long workshop to learn how to host a Discord Bot using the Discord.py Python API.
