@@ -17,5 +17,9 @@ class Example(commands.Cog):
         await ctx.message.delete() # Deletes message
         await ctx.send(f'{thing_to_say}') # send the reason is the chat
 
+    @commands.command()
+    async def test(self, ctx, *args):
+        print(args)
+
 def setup(bot):
     bot.add_cog(Example(bot))
