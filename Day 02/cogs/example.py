@@ -12,10 +12,10 @@ class Example(commands.Cog):
         print(f'We have logged in as {self.bot.user}')
     
     @commands.command()
-    async def shame(self, ctx, *, reason):
+    async def say(self, ctx, *, thing_to_say): # "thing_to_say" is everything after the command
         """Use this section to explain what the command does"""
-        await ctx.message.delete()
-        await ctx.send(f'shame on {reason}')
+        await ctx.message.delete() # Deletes message
+        await ctx.send(f'{thing_to_say}') # send the reason is the chat
 
 def setup(bot):
     bot.add_cog(Example(bot))

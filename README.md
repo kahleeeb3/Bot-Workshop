@@ -1,6 +1,6 @@
 # Discord Bot Workshop
-
-### Required
+# Process Setup
+## Required
 - An I.D.E. such as [Visual Studio Code](https://code.visualstudio.com/)
 - [Python](https://www.python.org/) installed on your PC
 <hr>
@@ -29,7 +29,7 @@ Please consult the documentation at https://discordpy.readthedocs.io/
     ```
 <hr>
 
-## Example code 
+## Very Basic Bot
 ```python
 import discord
 
@@ -50,4 +50,3 @@ async def on_message(message):
 token = open('token.txt', "r").read()
 client.run(token)
 ```
-`main.py`
