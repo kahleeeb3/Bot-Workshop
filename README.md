@@ -1,52 +1,32 @@
 # Discord Bot Workshop
-# Process Setup
-## Required
-- An I.D.E. such as [Visual Studio Code](https://code.visualstudio.com/)
-- [Python](https://www.python.org/) installed on your PC
-<hr>
+<style>
+    .center {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 300px;
+    }
+</style>
+<a href = "https://discordpy.readthedocs.io/en/latest/index.html#">
+    <img src="Extra Files/snake.svg" class="center"/>
+</a>
 
-## Create a Discord bot
-- Visit the [Discord Developer Portal](https://discord.com/developers/)
-- Click `Create Application`
-- Under `Settings` select the `Bot` option
-- Select `Add Bot` and the `Yes, do it!`
-- Copy your `bot token` and paste it into a text file on your computer
-- Go to `OAuth2`, select the `bot` scope, and select the `Permissions` you would like the bot to have. 
-- Copy and paste the url into a web browser to invite the bot
+- This is a three day long workshop to learn how to host a Discord Bot using the Discord.py Python API.
+- Please read through the documentation within the `Day01` folder for general setup
+- Please read through the documentation within the `Day02` folder for example code on how to use `cogs`
 
-<hr>
+## Important Resources 
+**Useful Resources**
+> [Available languages for Bot development](https://discord.com/developers/docs/topics/community-resources)
 
-## Write some Code!
-Please consult the documentation at https://discordpy.readthedocs.io/
-### Installing API
-- You can get the library directly from PyPI:
-    ```
-    python3 -m pip install -U discord.py
-    ```
-- If you are using Windows, then the following should be used instead:
-    ```
-    py -3 -m pip install -U discord.py
-    ```
-<hr>
+> [discord.py documentation](
+https://discordpy.readthedocs.io/en/latest/index.html#)
 
-## Very Basic Bot
-```python
-import discord
+> [Workshop GitHub Repo](
+https://github.com/kahleeeb3/Bot-Workshop)
 
-client = discord.Client()
+> [CSC-Club Discord Bot GitHub Repo](
+https://github.com/kahleeeb3/CSC-Club)
 
-@client.event
-async def on_ready():
-    print('We have logged in as {0.user}'.format(client))
-
-@client.event
-async def on_message(message):
-    if message.author == client.user:
-        return
-
-    if message.content.startswith('$hello'):
-        await message.channel.send('Hello!')
-
-token = open('token.txt', "r").read()
-client.run(token)
-```
+> [Discord API Terms of Service](
+https://discord.com/developers/docs/policy)
