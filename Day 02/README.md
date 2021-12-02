@@ -16,7 +16,7 @@ Please review the Discord API [Terms of Service](https://discord.com/developers/
 - Here is what mine looks like:
     - `main.py` and the `cogs` folder (with `example.py` inside) go within `my_code` folder
     <p align="center">
-    <img src="img1.png" alt="drawing" width="300"/>
+    <img src="../Extra Files/img1.png" alt="drawing" width="300"/>
     </p>
 - If you use github, only push the `my_code` folder. Do not share your token.txt file anywhere or it will be reset
 ## Code
