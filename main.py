@@ -1,21 +1,14 @@
 import discord
+from discord.ext import commands
+import os
 
-client = discord.Client() # define the client
+intents = discord.Intents.all()
+bot = commands.Bot(command_prefix = '!', intents=intents)
 
-@client.event # event decorator that registers an event
-async def on_ready(): 
-    # discord.py is an asynchronous library => everything is done in callbacks i.e. (async def)
-    # a callback is a function that is called when somehing else happens i.e. "on ready"
-    print(f'We have logged in as {client.user}')
-    #print('We have logged in as {0.user}'.format(client)) # does the same thing
-
-@client.event
-async def on_message(message): # discord.py looks for these function names when stuff happens
-    if message.author == client.user: # if the message is sent by the bot
-        return
-
-    if message.content.startswith('$hello'): 
-        await message.channel.send('Hello!')
+file_dir = './cogs'
+for filename in os.listdir(file_dir):
+    if filename.endswith('.py'):
+        bot.load_extension(f'cogs.{filename[:-3]}')
 
 token = open('../token.txt', "r").read()
-client.run(token)
+bot.run(token)
