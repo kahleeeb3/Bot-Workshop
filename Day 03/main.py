@@ -10,5 +10,5 @@ for filename in os.listdir(file_dir):
     if filename.endswith('.py'):
         bot.load_extension(f'cogs.{filename[:-3]}')
 
-token = open("../token.txt", "r").read()
+token = open("../../token.txt", "r").read()
 bot.run(token)
